@@ -1,6 +1,6 @@
 //importaciones
 var roleHarvester = require("role.harvester");
-var numCreeps = 3;
+var numCreeps = 5;
 
 
 module.exports.loop = function () {
