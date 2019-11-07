@@ -22,16 +22,15 @@ module.exports = {
       if(worker.carry.energy < worker.carryCapacity && worker.memory.conRecursos == 0){
 
         sources = worker.room.find(FIND_SOURCES);
-        if(worker.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
-              worker.moveTo(sources[0], { visualizePathStyle: { stroke: '#ffaa00' } });
+        if(worker.harvest(sources[1]) == ERR_NOT_IN_RANGE) {
+              worker.moveTo(sources[1], { visualizePathStyle: { stroke: '#ffaa00' } });
         }
 
           //console.log("pasa de la comprobacion lleno");
       }
       else {
-
-        if (worker.upgradeController(worker.room.controller) == ERR_NOT_IN_RANGE) {
-            worker.moveTo(worker.room.controller, { visualizePathStyle: { stroke: '#ffffff' } });
+        if (worker.transfer(Game.spawns["Spawn1"],RESOURCE_ENERGY,10) == ERR_NOT_IN_RANGE) {
+            worker.moveTo(Game.spawns["Spawn1"], { visualizePathStyle: { stroke: '#ffffff' } });
         }
 
         if(worker.carry.energy == 0){
@@ -39,5 +38,7 @@ module.exports = {
               //console.log("outRecursos");
         }
       }
+
     }
+
 };

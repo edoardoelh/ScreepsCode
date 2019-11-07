@@ -10,7 +10,7 @@
 module.exports = {
   run: function(upgrader){
     if(upgrader.carry.energy == upgrader.carryCapacity){
-            worker.memory.conRecursos = 1;
+            upgrader.memory.conRecursos = 1;
       }
     if (Memory.sources == undefined){
         Memory.sources = upgrader.room.find(FIND_SOURCES);
